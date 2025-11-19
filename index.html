@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初一英语听力训练 - 新牛津沪教版</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🎧 初一英语听力训练</h1>
+            <p class="subtitle">新牛津沪教版 七年级第一学期</p>
+        </header>
+
+        <!-- 导航菜单 -->
+        <nav class="nav-menu">
+            <button class="nav-btn active" data-module="word">单词听写</button>
+            <button class="nav-btn" data-module="sentence">句子理解</button>
+            <button class="nav-btn" data-module="passage">短文听力</button>
+            <button class="nav-btn" data-module="review">错题本</button>
+        </nav>
+
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <!-- 单词听写模块 -->
+            <section id="word-module" class="module active">
+                <div class="module-header">
+                    <h2>单词听写</h2>
+                    <div class="progress-info">
+                        <span>进度: <span id="word-progress">0/0</span></span>
+                        <span>得分: <span id="word-score">0</span></span>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="audio-controls">
+                        <button id="word-play" class="btn-play">🔊 播放单词</button>
+                        <select id="word-speed" class="speed-selector">
+                            <option value="0.75">慢速 0.75x</option>
+                            <option value="1" selected>正常 1x</option>
+                            <option value="1.25">快速 1.25x</option>
+                        </select>
+                    </div>
+
+                    <div class="answer-area">
+                        <input type="text" id="word-input" class="answer-input" placeholder="请输入你听到的单词" autocomplete="off">
+                        <button id="word-submit" class="btn-submit">提交答案</button>
+                    </div>
+
+                    <div id="word-feedback" class="feedback"></div>
+
+                    <div class="action-buttons">
+                        <button id="word-next" class="btn-next">下一题</button>
+                        <button id="word-replay" class="btn-replay">重新开始</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 句子理解模块 -->
+            <section id="sentence-module" class="module">
+                <div class="module-header">
+                    <h2>句子理解</h2>
+                    <div class="progress-info">
+                        <span>进度: <span id="sentence-progress">0/0</span></span>
+                        <span>得分: <span id="sentence-score">0</span></span>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="audio-controls">
+                        <button id="sentence-play" class="btn-play">🔊 播放句子</button>
+                        <select id="sentence-speed" class="speed-selector">
+                            <option value="0.75">慢速 0.75x</option>
+                            <option value="1" selected>正常 1x</option>
+                            <option value="1.25">快速 1.25x</option>
+                        </select>
+                    </div>
+
+                    <div class="question-text" id="sentence-question"></div>
+
+                    <div class="options-area" id="sentence-options"></div>
+
+                    <div id="sentence-feedback" class="feedback"></div>
+
+                    <div class="action-buttons">
+                        <button id="sentence-next" class="btn-next">下一题</button>
+                        <button id="sentence-replay" class="btn-replay">重新开始</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 短文听力模块 -->
+            <section id="passage-module" class="module">
+                <div class="module-header">
+                    <h2>短文听力</h2>
+                    <div class="progress-info">
+                        <span>进度: <span id="passage-progress">0/0</span></span>
+                        <span>得分: <span id="passage-score">0</span></span>
+                    </div>
+                </div>
+
+                <div class="exercise-card">
+                    <div class="audio-controls">
+                        <button id="passage-play" class="btn-play">🔊 播放短文</button>
+                        <select id="passage-speed" class="speed-selector">
+                            <option value="0.75">慢速 0.75x</option>
+                            <option value="1" selected>正常 1x</option>
+                            <option value="1.25">快速 1.25x</option>
+                        </select>
+                    </div>
+
+                    <div class="passage-questions" id="passage-questions"></div>
+
+                    <div id="passage-feedback" class="feedback"></div>
+
+                    <div class="action-buttons">
+                        <button id="passage-submit" class="btn-submit">提交答案</button>
+                        <button id="passage-next" class="btn-next">下一篇</button>
+                        <button id="passage-replay" class="btn-replay">重新开始</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 错题本模块 -->
+            <section id="review-module" class="module">
+                <div class="module-header">
+                    <h2>错题本</h2>
+                    <button id="clear-mistakes" class="btn-clear">清空错题</button>
+                </div>
+
+                <div class="review-content" id="review-content">
+                    <p class="empty-message">暂无错题记录</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>💡 提示：可以多次播放音频，调节播放速度来适应自己的节奏</p>
+        </footer>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
