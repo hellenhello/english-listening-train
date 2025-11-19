@@ -1,0 +1,564 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 头部 */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    animation: fadeInDown 0.6s ease;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* 导航菜单 */
+.nav-menu {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    border: none;
+    background: white;
+    color: #667eea;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* 主内容区域 */
+.main-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    min-height: 500px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.module {
+    display: none;
+}
+
+.module.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.module-header h2 {
+    color: #667eea;
+    font-size: 1.8rem;
+}
+
+.progress-info {
+    display: flex;
+    gap: 20px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.progress-info span {
+    font-weight: 500;
+}
+
+.progress-info span span {
+    color: #667eea;
+    font-weight: 700;
+}
+
+/* 练习卡片 */
+.exercise-card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-play {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    font-weight: 600;
+}
+
+.btn-play:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-play:active {
+    transform: scale(0.98);
+}
+
+.btn-play:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.speed-selector {
+    padding: 10px 15px;
+    border: 2px solid #667eea;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #667eea;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.speed-selector:hover {
+    background: #f8f9ff;
+}
+
+/* 答题区域 */
+.answer-area {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.answer-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.answer-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-submit, .btn-next, .btn-replay, .btn-clear {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-submit {
+    background: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.btn-submit:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+}
+
+.btn-next {
+    background: #2196F3;
+    color: white;
+    display: none;
+}
+
+.btn-next.show {
+    display: inline-block;
+}
+
+.btn-next:hover {
+    background: #1976D2;
+    transform: translateY(-2px);
+}
+
+.btn-replay {
+    background: #FF9800;
+    color: white;
+}
+
+.btn-replay:hover {
+    background: #F57C00;
+    transform: translateY(-2px);
+}
+
+.btn-clear {
+    background: #f44336;
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.btn-clear:hover {
+    background: #d32f2f;
+}
+
+/* 反馈区域 */
+.feedback {
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+    animation: slideIn 0.3s ease;
+}
+
+.feedback.show {
+    display: block;
+}
+
+.feedback.correct {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.feedback.wrong {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+
+.feedback .correct-answer {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* 问题文本 */
+.question-text {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 选项区域 */
+.options-area {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    background: white;
+    color: #333;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.option-btn:hover {
+    border-color: #667eea;
+    background: #f8f9ff;
+    transform: translateX(5px);
+}
+
+.option-btn.selected {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.option-btn.correct {
+    background: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.option-btn.wrong {
+    background: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* 短文问题 */
+.passage-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.passage-question-item {
+    padding: 20px;
+    background: #f8f9ff;
+    border-radius: 15px;
+}
+
+.passage-question-item h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.passage-question-item .options-area {
+    margin-top: 12px;
+}
+
+/* 动作按钮区域 */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 错题本 */
+.review-content {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    font-size: 1.2rem;
+    padding: 60px 20px;
+}
+
+.mistake-item {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #fff9f0;
+    border-left: 4px solid #FF9800;
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.mistake-item h4 {
+    color: #FF9800;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.mistake-item p {
+    margin: 8px 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.mistake-item .your-answer {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.mistake-item .correct-answer {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.mistake-item .replay-audio {
+    margin-top: 12px;
+    padding: 8px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.mistake-item .replay-audio:hover {
+    background: #5568d3;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    padding: 20px;
+    opacity: 0.9;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .module-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .module-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .btn-play {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .answer-input {
+        min-width: 100%;
+    }
+
+    .audio-controls,
+    .answer-area,
+    .action-buttons {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .progress-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+    }
+
+    .nav-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
